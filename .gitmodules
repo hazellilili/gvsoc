@@ -1,6 +1,6 @@
 [submodule "core"]
 	path = core
-	url = https://github.com/hazellilili/gvsoc-core.git
+	url = https://github.com/hazellilili/gvsoc-core
 	branch = rfamedina/dramsys_update
 [submodule "pulp"]
 	path = pulp
