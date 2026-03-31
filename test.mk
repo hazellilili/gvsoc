@@ -164,7 +164,11 @@ test.checkout.magia:
 	fi
 	cd "tests/magia-sdk" && \
 	git fetch --all && \
+<<<<<<< HEAD
 	git checkout ac3e726cbf189f2107c58d5ca1553205e54daf54
+=======
+	git checkout 3530f338042b7f10b564171112f5ebf8b7222196
+>>>>>>> c348095 (generators: added new module for system specs description)
 
 test.build.magia: test.checkout.magia
 	rm -rf $(CURDIR)/tests/magia-sdk/build
