@@ -96,7 +96,7 @@ clean:
 	rm -rf $(BUILDDIR) $(INSTALLDIR)
 
 github.test:
-	gvtest $(GVTEST_TARGET_FLAGS) --testset testset-github.cfg --max-timeout 120 --no-fail run table junit
+	gvtest $(foreach t,$(subst ;, ,$(RUN_TARGETS)),--target $(t)) --testset testset-github.cfg --max-timeout 120 --no-fail run table junit
 
 riscv:
 	wget https://github.com/riscv-collab/riscv-gnu-toolchain/releases/download/2025.01.17/riscv64-elf-ubuntu-22.04-gcc-nightly-2025.01.17-nightly.tar.xz
