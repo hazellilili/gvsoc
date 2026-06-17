@@ -73,6 +73,9 @@ gvrun.build:
 
 	cmake --build $(BUILDDIR)/gvrun $(CMAKE_FLAGS)
 	cmake --install $(BUILDDIR)/gvrun
+	if [ -f $(INSTALLDIR)/python/gvrun/runtime.py ] && [ ! -f $(INSTALLDIR)/python/gvrun/timing.py ]; then \
+		printf "from .runtime import *\n" > $(INSTALLDIR)/python/gvrun/timing.py; \
+	fi
 
 	$(CMAKE) -S config_tree -B $(BUILDDIR)/config_tree -DCMAKE_BUILD_TYPE=$(BUILD_TYPE) \
 		-DCMAKE_INSTALL_PREFIX=$(INSTALLDIR)
